@@ -9,7 +9,7 @@ const ContextProvider = ({ children }) => {
 
   const navigate = useNavigate();
   
-  const url = "http://localhost:5000";
+  const url = "https://thaslifa.onrender.com";
 
   
   const [productData, setProductData] = useState([]);
@@ -140,7 +140,7 @@ const ContextProvider = ({ children }) => {
   const loginSubmitFun = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${url}/user/loginUser`, {
+      await axios.post(`${url}/user/getUser`, {
         registerUsername: loginUsername,
         registerPassword: loginPassword,
       });
