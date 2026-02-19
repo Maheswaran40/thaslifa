@@ -140,14 +140,18 @@ const ContextProvider = ({ children }) => {
   const loginSubmitFun = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${url}/user/getUser`, {
+      await axios.get(`${url}/user/getUser`, {
         registerUsername: loginUsername,
         registerPassword: loginPassword,
+        
       });
+      navigate("/slide");
+
+      console.log("loginUsername",loginUsername);
+      
       console.log("loginUsername",loginUsername)
       localStorage.setItem("username", loginUsername);
 
-      navigate("/slide");
     } catch (err) {
       alert("You have to Register");
     }
